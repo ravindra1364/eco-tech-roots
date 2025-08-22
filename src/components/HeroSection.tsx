@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-aerial-wetlands.jpg";
 import { ChevronDown, Plane, TreePine, Waves } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const scrollToNext = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+    const exploreSection = document.querySelector('section');
+    exploreSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -52,18 +53,20 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
+            asChild
             size="lg" 
             variant="secondary"
             className="bg-white/10 text-white border border-white/30 hover:bg-white/20 backdrop-blur-sm ripple-effect transition-organic"
           >
-            Explore Research
+            <Link to="/research">Explore Research</Link>
           </Button>
           <Button 
+            asChild
             size="lg" 
             variant="outline"
             className="bg-transparent text-white border border-white/50 hover:bg-white/10 backdrop-blur-sm ripple-effect transition-organic"
           >
-            View Publications
+            <Link to="/projects">View Projects</Link>
           </Button>
         </div>
       </div>

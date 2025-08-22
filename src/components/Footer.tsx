@@ -1,15 +1,16 @@
 import { MapPin, Mail, Phone, ExternalLink, Globe, Github, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const quickLinks = [
-    { label: "About", href: "#about" },
-    { label: "Research", href: "#research" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Awards", href: "#awards" },
-    { label: "Contact", href: "#contact" }
+    { label: "About", href: "/about" },
+    { label: "Research", href: "/research" },
+    { label: "Projects", href: "/projects" },
+    { label: "Experience", href: "/experience" },
+    { label: "Awards", href: "/awards" },
+    { label: "Contact", href: "/contact" }
   ];
 
   const socialLinks = [
@@ -34,11 +35,6 @@ const Footer = () => {
       url: "https://github.com/rtripathi-wii"
     }
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.replace('#', ''));
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -86,12 +82,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <Link
+                    to={link.href}
                     className="text-primary-foreground/80 hover:text-white transition-organic text-sm"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
