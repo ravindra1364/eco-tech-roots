@@ -61,7 +61,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Nature-themed colors
+				forest: {
+					deep: 'hsl(var(--forest-deep))',
+					light: 'hsl(var(--forest-light))'
+				},
+				river: {
+					blue: 'hsl(var(--river-blue))',
+					light: 'hsl(var(--river-light))'
+				},
+				earth: {
+					brown: 'hsl(var(--earth-brown))',
+					light: 'hsl(var(--earth-light))'
+				},
+				sunrise: 'hsl(var(--sunrise))',
+				wetland: 'hsl(var(--wetland))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +99,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'gentle-float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'organic-pulse': {
+					'0%, 100%': { 
+						borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						borderRadius: '70% 30% 30% 70% / 70% 70% 30% 30%',
+						transform: 'scale(1.05)'
+					}
+				},
+				'river-flow': {
+					'0%': { left: '-100%' },
+					'100%': { left: '100%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'gentle-float': 'gentle-float 3s ease-in-out infinite',
+				'organic-pulse': 'organic-pulse 4s ease-in-out infinite',
+				'river-flow': 'river-flow 3s linear infinite'
 			}
 		}
 	},
